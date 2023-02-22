@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -113,7 +113,13 @@ const Signup = () => {
                   </Row>
                 </div>
                 <div className="card-footer">
-                  <Button onClick={handelSubmit}>Sign Up</Button>
+                <Row>
+                    <Col lg={8}>
+                      <Button onClick={handelSubmit}>Sign Up</Button>
+                    </Col>
+                    <Col lg={4}>
+                      <Link to='/login'>Are you have account?</Link></Col>
+                  </Row>
                 </div>
               </Card>
             </Col>

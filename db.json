@@ -1,12 +1,12 @@
 {
   "admins": [
     {
-      "user": "aaa",
-      "password": "dasd",
+      "user": "alaa",
+      "password": "123",
       "email": "alaayasser2018@gmail.com",
       "phone": "+201556774943",
       "country": "Egypt",
-      "gender": "female",
+      "gender": "male",
       "id": 1
     }
   ]
