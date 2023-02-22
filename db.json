@@ -1,0 +1,13 @@
+{
+  "admins": [
+    {
+      "user": "aaa",
+      "password": "dasd",
+      "email": "alaayasser2018@gmail.com",
+      "phone": "+201556774943",
+      "country": "Egypt",
+      "gender": "female",
+      "id": 1
+    }
+  ]
+}
