@@ -1,0 +1,31 @@
+.form__section {
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.form__card {
+    position: relative;
+}
+
+input {
+    outline: 0;
+}
+.close{
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.close:hover{
+    color: #000 !important;
+}
