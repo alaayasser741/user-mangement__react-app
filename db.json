@@ -10,5 +10,30 @@
       "id": 1
     }
   ],
-  "users":[]
+  "users": [
+    {
+      "userName": "Alaa",
+      "email": "alaaabdalla@std.mans.edu.eg",
+      "country": "Other",
+      "id": 1
+    },
+    {
+      "userName": "Debruyne",
+      "email": "debruyne2019@gmail.com",
+      "country": "Egypt",
+      "id": 2
+    },
+    {
+      "userName": "Jinx",
+      "email": "jinx2010@gmail.com",
+      "country": "USA",
+      "id": 3
+    },
+    {
+      "userName": "tryndamare",
+      "email": "tryndamare@m.com",
+      "country": "KSA",
+      "id": 4
+    }
+  ]
 }

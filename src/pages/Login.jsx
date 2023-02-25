@@ -18,7 +18,6 @@ const Login = () => {
     axios.get(`http://localhost:3000/admins/1`).then(res=>{
     toast.success("Login Successfully");
     navigate(`/users`)
-    console.log(res.data)
     }).catch(e=>{
       toast.error("Login Failed")
       console.log(e.message)
