@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Spinner } from 'react-bootstrap';
 import axios from 'axios';
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,19 +12,22 @@ const Signup = () => {
   const [phone, setPhone] = useState('');
   const [country, setCountry] = useState('');
   const [gender, setGender] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const handelSubmit = (e) => {
     let userData = { user, password, email, phone, country, gender }
-    axios.post("http://localhost:3000/admins", userData).then(res => {
+    setLoading(true)
+    axios.post("http://localhost:3004/admins", userData).then(res => {
       toast.success("User Register Successfully");
       setTimeout(() => {
         navigate(`/login`)
+        setLoading(false)
       }, 1000);
     }).catch(err => {
       toast.error("User Register Failed")
-
+      setLoading(false)
       console.log(err)
     });
 
@@ -113,9 +116,10 @@ const Signup = () => {
                   </Row>
                 </div>
                 <div className="card-footer">
-                <Row>
+                  <Row>
                     <Col lg={8}>
-                      <Button onClick={handelSubmit}>Sign Up</Button>
+                      {loading ? <Spinner animation="grow" variant="primary" /> : <Button onClick={handelSubmit}>Sign Up</Button>}
+
                     </Col>
                     <Col lg={4}>
                       <Link to='/login'>Are you have account?</Link></Col>

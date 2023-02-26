@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,21 +8,25 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
-
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const handelSubmit = (e) => {
     let userData = { user, password };
+    setLoading(true)
+    axios.get(`http://localhost:3004/admins/1`).then(res => {
+      toast.success("Login Successfully");
+      setTimeout(() => {
+        navigate(`/users`)
+        setLoading(false)
+      }, 1000);
 
-    axios.get(`http://localhost:3000/admins/1`).then(res=>{
-    toast.success("Login Successfully");
-    navigate(`/users`)
-    }).catch(e=>{
+    }).catch(e => {
       toast.error("Login Failed")
       console.log(e.message)
+      setLoading(false)
     })
-
   }
 
 
@@ -63,7 +67,7 @@ const Login = () => {
                 <div className="card-footer">
                   <Row>
                     <Col lg={8}>
-                      <Button onClick={handelSubmit}>Log in</Button>
+                      {loading ? <Spinner animation="grow" variant="primary" /> : <Button onClick={handelSubmit}>Log in</Button>}
                     </Col>
                     <Col lg={4}>
                       <Link to='/signup'>Dont have account?</Link></Col>

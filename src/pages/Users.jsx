@@ -16,7 +16,7 @@ const Users = () => {
 
   // getData
   const getData = () => {
-    axios.get('http://localhost:3000/users')
+    axios.get('http://localhost:3004/users')
       .then(res => {
         setUsersData(res.data);
         getData();
@@ -24,7 +24,7 @@ const Users = () => {
       .catch(err => { console.log(err) });
   }
   useEffect(() => {
-    axios.get('http://localhost:3000/users')
+    axios.get('http://localhost:3004/users')
     getData();
   }, [showForm, showEditForm,])
 
@@ -48,7 +48,7 @@ const Users = () => {
   // Delete User
   const deleteUser = (id) => {
     if(window.confirm("Are You Sure ?")){
-      axios.delete(`http://localhost:3000/users/${id}`).then(res => {
+      axios.delete(`http://localhost:3004/users/${id}`).then(res => {
         toast.success("User Deleted ❌😢")
         setShowEditForm(false)
       }).catch(err => {

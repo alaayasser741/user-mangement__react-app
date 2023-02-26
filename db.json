@@ -8,6 +8,24 @@
       "country": "Egypt",
       "gender": "male",
       "id": 1
+    },
+    {
+      "user": "",
+      "password": "",
+      "email": "",
+      "phone": "",
+      "country": "",
+      "gender": "",
+      "id": 2
+    },
+    {
+      "user": "",
+      "password": "",
+      "email": "",
+      "phone": "",
+      "country": "",
+      "gender": "",
+      "id": 3
     }
   ],
   "users": [
@@ -18,12 +36,6 @@
       "id": 1
     },
     {
-      "userName": "Debruyne",
-      "email": "debruyne2019@gmail.com",
-      "country": "Egypt",
-      "id": 2
-    },
-    {
       "userName": "Jinx",
       "email": "jinx2010@gmail.com",
       "country": "USA",
@@ -31,9 +43,15 @@
     },
     {
       "userName": "tryndamare",
-      "email": "tryndamare@m.com",
+      "email": "tryndamare@gag.com",
       "country": "KSA",
       "id": 4
+    },
+    {
+      "userName": "CR7",
+      "email": "jinx2010@gmail.com",
+      "country": "USA",
+      "id": 5
     }
   ]
 }

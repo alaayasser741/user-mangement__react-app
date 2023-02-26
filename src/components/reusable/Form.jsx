@@ -14,7 +14,7 @@ const Form = ({ setShow, showForm, showEditForm, setShowEditForm, usersDataEdit 
         e.preventDefault();
         if (usersDataEdit) {
             let userEditData = { userName, email, country };
-            axios.put(`http://localhost:3000/users/${usersDataEdit.id}`, userEditData).then(res => {
+            axios.put(`http://localhost:3004/users/${usersDataEdit.id}`, userEditData).then(res => {
                 toast.success("User updated 😀🫡")
                 setShowEditForm(false)
             }).catch(err => {
@@ -22,7 +22,7 @@ const Form = ({ setShow, showForm, showEditForm, setShowEditForm, usersDataEdit 
             })
         } else {
             let userData = { userName, email, country };
-            axios.post('http://localhost:3000/users', userData)
+            axios.post('http://localhost:3004/users', userData)
                 .then(res => {
                     toast.success("User Add successfully");
                     setShow(false);
